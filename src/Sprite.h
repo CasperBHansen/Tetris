@@ -23,7 +23,7 @@ public:
 	 * Constructs an instance of the Sprite class.
 	 */
 	Sprite(const char * filename, SDL_Rect src);
-	~Sprite();
+	virtual ~Sprite();
 	
 	virtual int load();
 	virtual void release();
