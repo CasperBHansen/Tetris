@@ -50,6 +50,7 @@ int GraphicsEngine::init()
 
 void GraphicsEngine::drawSprite(int handle, SDL_Rect dst)
 {
+	// TOOD: optimize this
 	for (vector<Sprite *>::iterator it = sprites.begin(); it != sprites.end(); ++it)
 		if ( (*it)->getHandle() == handle )
 			(* it)->draw(surface, dst);
