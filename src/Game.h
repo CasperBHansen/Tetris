@@ -36,6 +36,7 @@ protected:
 	
 private:
 	bool running;
+	bool drop;
 	int speed;
 	
 	GraphicsEngine * gfxEngine;

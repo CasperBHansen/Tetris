@@ -77,8 +77,11 @@ int Game::onUpdate()
 	if (!board->update())
 		running = false;
 	
-	if ( (tick - last) > speed ) {
-		board->moveBlock(DIR_DOWN);
+	if ( (tick - last) > (drop ? speed/100 : speed) ) {
+		if (drop)
+			drop = board->moveBlock(DIR_DOWN);
+		else
+			board->moveBlock(DIR_DOWN);
 		last = tick;
 		
 		++speed;
@@ -119,7 +122,7 @@ void Game::onEvent(SDL_Event * event)
 					break;
 				
 				case SDLK_SPACE:
-					cout << "TODO: implement fast place.." << endl;
+					drop = true;
 					break;
 				
 				case SDLK_ESCAPE:
