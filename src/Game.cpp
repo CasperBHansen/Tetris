@@ -46,7 +46,7 @@ int Game::run()
 	if ( gfxEngine->init() != 0 )
 		return 1;
 	
-	board = new Board(8, 16, 32);
+	board = new Board(10, 16, 32);
 	
 	while ( running ) {
 		
