@@ -81,10 +81,10 @@ int Game::onUpdate()
 		if (drop)
 			drop = board->moveBlock(DIR_DOWN);
 		else
-			board->moveBlock(DIR_DOWN);
-		last = tick;
+			if (!board->moveBlock(DIR_DOWN))
+				speed -= 1;
 		
-		++speed;
+		last = tick;
 	}
 	
 	return 0;
