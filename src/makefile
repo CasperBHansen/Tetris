@@ -14,7 +14,7 @@ run:
 	./$(EXE)
 
 docs:
-	doxygen ../docs
+	doxygen ../.doc
 
 build:
 	clear
